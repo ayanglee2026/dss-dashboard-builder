@@ -37,7 +37,14 @@ install:
 
 如果用户没备齐，用这 3 问兜底引导：**谁在用？看什么指标？数据从哪来？** 但不要反复追问——先给最合理假设并说明，让用户纠正。
 
-## 工作流（8 阶段）
+## 工作流（9 阶段）
+
+```
+0 定规则+目标 → 1 数据范围及定义 → 2 指标目录 → 3 MVP数据验证 → 4 指标库发布
+             → 5 应用层组装 → 6 视觉打磨 → 7 部署上线 → 8 验收
+```
+
+阶段 1–4 对应羊哥作业流程 4 步，不合并。阶段 6 视觉打磨在功能全定死后才做（数据准确优先于视觉效果）。
 
 ### 阶段 0：定规则 + 目标
 - 新建项目目录结构：`src/` 源码、`data/` 原始数据、`output/` 产出物
@@ -78,13 +85,19 @@ install:
 - 产出配置表给用户逐项确认，再落地实现
 - 参考 `references/assembly-config.md`、`references/tree-aggregation.md`、`references/anomaly-todo.md`、`references/permission.md`
 
-### 阶段 6：部署上线
+### 阶段 6：视觉打磨
+- 功能+呈现方式全部定死（阶段5）后，做视觉打磨。**数据对、功能全，才开始打磨**，别反过来
+- 逐项确认：配色（品牌色，无则出 2-3 组让用户选）、整体布局（ASCII 草图）、模块内布局、logo 配置、目标设备、署名
+- 产出《视觉规范》给用户确认，再套用到页面
+- 参考 `references/visual-polish.md`
+
+### 阶段 7：部署上线
 - 先定"要不要后端"：需要持久化/多人共享数据 → 后端；一次性展示/本地用 → 纯前端即可
 - 后端选型优先级：云函数/Serverless > 自建服务器（自建 = 自己运维）
 - 读接口要不要加口令校验：先问用户，别默认全加
 - 参考 `references/cloud-deploy.md`、`references/cloud-sync-adapter.md`
 
-### 阶段 7：验收（模块级）
+### 阶段 8：验收（模块级）
 - 每个模块一份验收清单，三层递进：数据准确 → 功能完整 → 交互可用
 - 每个启用选项 ≥1 条 Playwright 断言，测用户视角（UI 状态/数据值变化，不是函数返回值）
 - 滚动/图表渲染真滚 + 查 DOM overflow，不能只靠代码推断
@@ -132,6 +145,7 @@ install:
 | `references/data-profiling.md` | 阶段3 做 MVP 数据验证、查数据质量时 | domain-mapping |
 | `references/excel-import.md` | 涉及 Excel/CSV 导入、表头匹配、字段映射时 | domain-mapping、metric-dictionary |
 | `references/assembly-config.md` | 阶段5 应用层组装、功能/呈现/监控/部署选配时 | tree-aggregation、anomaly-todo、permission |
+| `references/visual-polish.md` | 阶段6 视觉打磨、配色/布局/logo/署名时 | assembly-config |
 | `references/tree-aggregation.md` | 做树形聚合、多维度钻取、视角切换时 | metric-dictionary、excel-import |
 | `references/anomaly-todo.md` | 做异常监控、规则、待办清单、提醒方式时 | tree-aggregation |
 | `references/permission.md` | 做登录、权限、按钮级控制、上传口令校验时 | 无 |
