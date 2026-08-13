@@ -13,8 +13,11 @@
 ## 核心流程
 
 ```
-阶段0 定规则 → 阶段1 数据画像 → 阶段2 指标口径 → 阶段3 MVP跑通 → 阶段4 叠加细节 → 阶段5 部署上线 → 阶段6 验收
+阶段0 定规则+目标 → 阶段1 数据范围定义 → 阶段2 指标目录 → 阶段3 MVP数据验证
+                 → 阶段4 指标库发布 → 阶段5 应用层组装 → 阶段6 部署上线 → 阶段7 验收
 ```
+
+八个阶段，一个引导对话 + 一个产出物，层层累积拼成成品。核心是 3 个价值点：**用户故事定目标**（阶段0）、**指标库定义→验证→发布**（阶段2-4）、**应用层组装选配**（阶段5）。
 
 ## 为什么这套流程值得用
 
@@ -36,24 +39,27 @@
 
 ```
 dss-dashboard-builder/
-├── SKILL.md                      # 主文件：核心原则 + 6阶段工作流 + 硬性避坑 + 前置依赖
+├── SKILL.md                      # 主文件：核心原则 + 8阶段工作流 + 硬性避坑 + 前置依赖
 ├── README.md                     # 项目说明
 ├── INSTALL.md                    # 多平台安装指南（Claude Code / WorkBuddy / Cursor）
 ├── MAINTENANCE.md                # 维护手册（版本规则、更新流程、过期检测）
 ├── CHANGELOG.md                  # 版本更新记录
 └── references/                   # 按需读取的模式文档（每篇顶部有依赖声明）
+    ├── module-story.md           # 模块定义卡 + 启动前准备 checklist（阶段0）
     ├── domain-mapping.md         # 领域映射表（通用字段 → 业务字段，长租/电商/SaaS/制造）
     ├── data-source-patterns.md   # 数据源接入模式（Excel/DB/API/JSON 选型决策树）
-    ├── data-profiling.md         # 数据画像检查清单
+    ├── data-profiling.md         # 数据验证检查清单（阶段3）
     ├── metric-dictionary.md      # 指标口径字典模板（通用字段骨架）
+    ├── metric-library.md         # 指标库全流程（目录→验证→发布，阶段2-4）
     ├── excel-import.md           # Excel/CSV 解析模式（表头匹配、交叉校验）
-    ├── anomaly-todo.md           # 异常监控规则 + 待办策略模式
+    ├── assembly-config.md        # 应用层组装清单（四维选项+验收标准，阶段5）
+    ├── anomaly-todo.md           # 异常监控规则 + 提醒方式 + 待办策略
     ├── tree-aggregation.md       # 树形聚合 / 多维钻取
     ├── permission.md             # 声明式权限（data-auth）
     ├── cloud-sync-adapter.md     # 数据访问层适配器（CloudBase/fetch/MySQL 后端）
     ├── cloud-deploy.md           # 部署上线（CDN 缓存坑、MySQL 建表模板）
     ├── export-report.md          # 报表导出静态化（图表转图、去依赖、离线可看）
-    └── acceptance-checklist.md   # 分层验收清单
+    └── acceptance-checklist.md   # 模块级分层验收清单
 ```
 
 ## 来源项目
