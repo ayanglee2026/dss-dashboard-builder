@@ -93,4 +93,4 @@ dss-dashboard-builder/
 使用中有问题、有想补充的模式，欢迎反馈给分享者。
 
 ---
-*Powered by 羊哥&C妹*
+*Powered by dss-dashboard-builder*

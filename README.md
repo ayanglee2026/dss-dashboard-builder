@@ -75,4 +75,4 @@ dss-dashboard-builder/
 
 ## 许可
 
-内部使用。署名约定：`Powered by 羊哥&C妹`
+开源，欢迎使用和反馈。署名约定：`Powered by dss-dashboard-builder`
