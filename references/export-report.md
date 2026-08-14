@@ -75,6 +75,7 @@ function doExport() {
 2. **相对路径 CSS/图片 404**：导出的 HTML 独立打开时相对路径失效，CSS 要内联、logo 要转 base64
 3. **中文文件名**：`a.download` 中文名在 Chrome 正常，个别老浏览器乱码（可用拼音/日期兜底）
 4. **导出前等图表动画/异步完成**：Chart.js 有动画，导出太早图表是初始空帧
+5. **JS 里拼接 `<script>`/`</script>` 字符串会提前闭合外层 script 标签**：导出函数里 `html.replace('<script src="data.js">', ...)` 这类字符串里的 `</script>` 会让浏览器把当前 `<script>` 标签提前截断，后面所有代码失效（页面白屏、按钮失灵）。字符串里的 `</script>` 必须写成 `<\/script>`（转义斜杠）
 
 ## 验收
 
