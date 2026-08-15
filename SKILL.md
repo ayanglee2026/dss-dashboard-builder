@@ -1,7 +1,7 @@
 ---
 name: dss-dashboard-builder
 description: 数据看板 / DSS（决策支持）系统从0到1的构建流程与方法。当用户说"做个数据看板/经营报表/库存分析/运营大屏/销售仪表盘/管理驾驶舱/DSS系统"，或给出 Excel/CSV/数据库 要求做统计、展示、监控、待办时使用。强调数据先行、口径先行、规则先行、分步交付、验收先行。也适用于"帮我把这份数据可视化/做成报表/分析平台/多模块驾驶舱"这类需求。
-version: 2.0.0
+version: 2.1.0
 agent_compatibility: [claude-code, workbuddy, cursor]
 install:
   claude-code: ~/.claude/skills/
@@ -65,7 +65,7 @@ install:
 
 ### 阶段 0：定规则 + 目标
 - 新建项目目录结构：`src/` 源码、`data/` 原始数据、`output/` 产出物
-- 写项目 `CLAUDE.md`：做什么、输入什么、输出什么、技术选型
+- 写项目规则文件（按环境自适应：Claude Code → `CLAUDE.md`，DSH → `AGENTS.md`，WorkBuddy → 项目规则.md）：做什么、输入什么、输出什么、技术选型
 - **收集用户故事 + 项目目标（填空式，不问「用途类型」——用途由用户故事自然带出）**：
   - 用户故事：`作为___，我要___，以便___`
   - 成功标准：可衡量的完成标准（给示例）
