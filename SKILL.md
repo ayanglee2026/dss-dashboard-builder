@@ -74,7 +74,7 @@ install:
 - 参考 `references/module-story.md`
 
 ### 阶段 1：数据范围及定义
-- 确认基础数据：字段清单、每字段业务含义、类型、主键/唯一 ID、单位、明细还是已聚合、来源、更新频率
+- 确认基础数据：字段清单、每字段业务含义、类型、主键/唯一 ID、单位、明细还是已聚合、来源、更新频率（字段清单/类型/唯一值可先跑 `python3 tools/profiler.py <文件>` 自动生成）
 - 产出《数据字段定义表》给用户确认
 - **只确认「数据是什么」，不做质量检查**（质量检查在阶段 3）
 - 参考 `references/domain-mapping.md`（字段字典）
@@ -87,7 +87,7 @@ install:
 
 ### 阶段 3：MVP 数据验证
 - 用最简方式跑通「导入 → 清洗 → 聚合 → 派生」链路，**核心目标是验证数据 + 指标算法正确**，不是做界面
-- 验证五维：数据质量 / 数据自洽 / 聚合正确 / 指标算法 / 边界用例（方法见 `references/metric-library.md` 验证章节）
+- 验证五维：数据质量 / 数据自洽 / 聚合正确 / 指标算法 / 边界用例（数据质量维度先跑 `python3 tools/profiler.py <文件>` 自动画像，见 `references/data-profiling.md`）
 - 产出《数据验证报告》，失败项处理并给用户确认后才进入阶段 4
 - 参考 `references/data-profiling.md`、`references/metric-library.md`
 

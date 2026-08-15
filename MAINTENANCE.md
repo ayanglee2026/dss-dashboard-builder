@@ -28,6 +28,8 @@
 改 skill → 改对应 reference → 更新版本号 → CHANGELOG 记一笔 → 同步所有安装位置
 ```
 
+**加任何新东西（工具 / reference / 流程）必须同步接「引用它的文档」**——否则 AI 按需读 reference 时不知道有它，等于白加。真实教训：v2.1.0 加了 `tools/profiler.py` 但没在 `data-profiling.md` / `SKILL.md` 阶段 1/3 引用，AI 走流程不会主动调用。
+
 同步位置：
 - Claude Code：`~/.claude/skills/`
 - WorkBuddy：`~/.workbuddy/skills/`
